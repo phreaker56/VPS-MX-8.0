@@ -2,7 +2,8 @@
 #sudo apt-get update  &>/dev/null
 #sudo apt-get wget -y &>/dev/null
 rm -rf /etc/localtime &>/dev/null
-ln -s /usr/share/zoneinfo/America/Mexico_City /etc/localtime &>/dev/null
+# ln -s /usr/share/zoneinfo/America/Mexico_City /etc/localtime &>/dev/null
+ln -s /usr/share/zoneinfo/America/Argentina/Tucuman /etc/localtime &>/dev/null
 rm $(pwd)/$0 &> /dev/null
 ### CONFIGURAR POR 22 SSH
 #grep -v "^Port 22" /etc/ssh/sshd_config > /tmp/ssh && mv /tmp/ssh /etc/ssh/sshd_config &>/dev/null
