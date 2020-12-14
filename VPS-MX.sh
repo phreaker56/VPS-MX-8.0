@@ -271,7 +271,7 @@ verificar_arq () {
 [[ ! -d ${SCPinst} ]] && mkdir ${SCPinst}
 case $1 in
 "menu"|"message.txt")ARQ="${SCPdir}/";; #Menu
-"usercodes")ARQ="${SCPusr}/";; #Panel SSRR
+"usercodes"|"verifica")ARQ="${SCPusr}/";; #Panel SSRR
 "C-SSR.sh")ARQ="${SCPinst}/";; #Instalacao
 "openssh.sh")ARQ="${SCPinst}/";; #Instalacao
 "squid.sh")ARQ="${SCPinst}/";; #Instalacao
