@@ -95,6 +95,7 @@ meu_ip
 [[ $(dpkg --get-selections|grep -w "figlet"|head -1) ]] || apt-get install figlet -y &>/dev/null
 [[ $(dpkg --get-selections|grep -w "lolcat"|head -1) ]] || apt-get install lolcat -y &>/dev/null
 sudo gem install lolcat &>/dev/null
+clear
 msg -bar2
 figlet " -GEN VPS MX-" | lolcat
 while [[ ! $Key ]]; do
