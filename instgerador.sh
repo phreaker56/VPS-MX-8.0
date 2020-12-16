@@ -92,7 +92,11 @@ exit 1
 
 meu_ip
 
-#figlet " -GEN VPS MX-" | lolcat
+[[ $(dpkg --get-selections|grep -w "figlet"|head -1) ]] || apt-get install figlet -y &>/dev/null
+[[ $(dpkg --get-selections|grep -w "lolcat"|head -1) ]] || apt-get install lolcat -y &>/dev/null
+sudo gem install lolcat &>/dev/null
+msg -bar2
+figlet " -GEN VPS MX-" | lolcat
 while [[ ! $Key ]]; do
 msg -bar2 && msg -ne "# DIGITE LA KEY #: " && read Key
 tput cuu1 && tput dl1
@@ -136,7 +140,7 @@ if [[ -e $HOME/lista-arq ]] && [[ ! $(cat $HOME/lista-arq|grep "KEY INVALIDA!") 
    sed -i "s;Listen 80;Listen 81;g" /etc/apache2/ports.conf
    service apache2 restart > /dev/null 2>&1 &
    IVAR2="/etc/key-gerador"
-   echo "$Key" > $IVAR
+   echo "" > $IVAR
    [[ -e ${SCPT_DIR}/autorizar ]] && {
     cp /bin/http-server.sh /etc/SCRIPT
     mv /etc/SCRIPT/http-server.sh /etc/SCRIPT/http-server.py
@@ -157,3 +161,4 @@ if [[ -e $HOME/lista-arq ]] && [[ ! $(cat $HOME/lista-arq|grep "KEY INVALIDA!") 
  else
     invalid_key
 fi
+rm -rf instgerador.sh
