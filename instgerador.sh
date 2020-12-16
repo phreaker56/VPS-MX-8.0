@@ -97,7 +97,7 @@ meu_ip
 sudo gem install lolcat &>/dev/null
 clear
 msg -bar2
-figlet " -GEN VPS MX-" | lolcat
+figlet " -KEY_GEN-" | lolcat
 while [[ ! $Key ]]; do
 msg -bar2 && msg -ne "# DIGITE LA KEY #: " && read Key
 tput cuu1 && tput dl1
