@@ -97,7 +97,7 @@ meu_ip
 sudo gem install lolcat &>/dev/null
 clear
 msg -bar2
-figlet " -KEY_GEN-" | lolcat
+figlet " -KEYGEN-" | lolcat
 while [[ ! $Key ]]; do
 msg -bar2 && msg -ne "# DIGITE LA KEY #: " && read Key
 tput cuu1 && tput dl1
