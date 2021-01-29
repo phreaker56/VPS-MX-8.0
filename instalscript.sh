@@ -61,12 +61,12 @@ else
 fi
 
 ubu16_fun () {
-    wget -O /etc/apt/sources.list https://raw.githubusercontent.com/VPS-MX/VPS-MX-8.0/master/Repositorios/16.04/sources.list &> /dev/null
+    wget -O /etc/apt/sources.list https://github.com/rudi9999/VPS-MX-8.1/raw/master/Repositorios/16.04/sources.list &> /dev/null
 	echo -e "\033[1;97m SELECCIONO UBU 16"
 }
 
 ubu18_fun () {
-    wget -O /etc/apt/sources.list https://raw.githubusercontent.com/VPS-MX/VPS-MX-8.0/master/Repositorios/18.04/sources.list &> /dev/null
+    wget -O /etc/apt/sources.list https://github.com/rudi9999/VPS-MX-8.1/raw/master/Repositorios/18.04/sources.list &> /dev/null
 	echo -e "\033[1;97m OK UBU 18"
 }	
 
