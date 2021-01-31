@@ -1,13 +1,9 @@
 #!/bin/bash
-#sudo apt-get update  &>/dev/null
-#sudo apt-get wget -y &>/dev/null
+
 rm -rf /etc/localtime &>/dev/null
-# ln -s /usr/share/zoneinfo/America/Mexico_City /etc/localtime &>/dev/null
 ln -s /usr/share/zoneinfo/America/Argentina/Tucuman /etc/localtime &>/dev/null
 rm $(pwd)/$0 &> /dev/null
-### CONFIGURAR POR 22 SSH
-#grep -v "^Port 22" /etc/ssh/sshd_config > /tmp/ssh && mv /tmp/ssh /etc/ssh/sshd_config &>/dev/null
-#echo "Port 22" >> /etc/ssh/sshd_config
+
 ### COLORES Y BARRA 
 msg () {
 BRAN='\033[1;37m' && VERMELHO='\e[31m' && VERDE='\e[32m' && AMARELO='\e[33m'
@@ -22,6 +18,7 @@ AZUL='\e[34m' && MAGENTA='\e[35m' && MAG='\033[1;36m' &&NEGRITO='\e[1m' && SEMCO
   "-bar2"|"-bar")cor="${VERMELHO}======================================================" && echo -e "${SEMCOR}${cor}${SEMCOR}";;
  esac
 }
+
 clear
  msg -bar2
  msg -ama "     [ VPS - MX - SCRIPT \033[1;97m ❌ MOD By @Kalix1 ❌\033[1;33m ]"
@@ -35,6 +32,7 @@ INSTALL_DIR_PARENT="/usr/local/vpsmxup/"
 INSTALL_DIR=${INSTALL_DIR_PARENT}${SCRIPT_NAME}/
 ## /etc/ config directory
 mkdir -p "/etc/vpsmxup/"
+
 ## Install/update
 if [ ! -d "$INSTALL_DIR" ]; then
 	echo -e  "\033[1;97m           Instalando Paquetes Prioritarios"
@@ -74,6 +72,7 @@ otro_fun () {
     
 	echo "OK OTRO"
 }
+
 	echo -e "\033[1;97m           ---- QUE UBUNTU ESTA USANDO ----"
 	echo -e "\033[1;97m  Digite solo el numero segun su respuesta: "
     msg -bar
