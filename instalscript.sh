@@ -97,6 +97,10 @@ otro_fun () {
     esac
 	
 sleep 3
+
+wget https://raw.githubusercontent.com/rudi9999/VPS-MX-8.0/master/VPS-MX.sh -O /usr/bin/VPS-MX &> /dev/null
+chmod +x /usr/bin/VPS-MX
+
 ## Restore working directory
 cd $WORKING_DIR_ORIGINAL
 vpsmxup
