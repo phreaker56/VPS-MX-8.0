@@ -41,11 +41,10 @@ CONFIGFILE_FULLPATH_ETC=/etc/vpsmxup/$CONFIGFILE_NAME
 CONFIGFILE_FULLPATH_DIR=${SCRIPT_DIR}$CONFIGFILE_NAME
 
 ## Title printing function
-function printTitle
-{
+function printTitle {
     echo ""
-    echo -e "\033[1;92m$1\033[1;91m"
-    printf '%0.s-' $(seq 1 ${#1})
+    echo -e "\033[92m$1\033[31m"
+    printf '%0.s=' $(seq 1 ${#1})
     echo ""
 }
 
@@ -193,16 +192,20 @@ lsb_release -d
 
 printTitle "Tiempo que tomó Actulizacion"
 echo "$((($(date +%s)-$TIME_START)/60)) min."
+
 msg -bar2
 echo -e "\033[93m           -- ACTULIZACION CASI COMPLETA -- "
 echo -e "\033[97m  SU VPS SE REINICIARA PARA FINALIZAR ACTULIZACIONES"
 msg -bar2
-echo -e "\033[93m                PARA FINALIZAR SOLO"
+echo -e "\033[93m               DESPUES DEL REINICIO" 
 echo -e "\033[93m                 DIGITE LA PALABRA\033[97m"
 echo ""
-echo -e "\033[1;41m                     sudo VPS-MX                      \033[0;37m"
+echo -e "                  \033[1;41m sudo VPS-MX \033[0m"
+msg -bar2
+
 wget https://raw.githubusercontent.com/rudi9999/VPS-MX-8.0/master/VPS-MX.sh -O /usr/bin/VPS-MX &> /dev/null
 chmod +x /usr/bin/VPS-MX
+
 if [ "$REBOOT" = "1" ]; then
 	printTitle "        SU VPS SE REINICIARA EN 20 SEGUNDOS           "
 	
