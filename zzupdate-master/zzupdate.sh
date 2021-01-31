@@ -203,9 +203,6 @@ echo ""
 echo -e "                  \033[1;41m sudo VPS-MX \033[0m"
 msg -bar2
 
-wget https://raw.githubusercontent.com/rudi9999/VPS-MX-8.0/master/VPS-MX.sh -O /usr/bin/VPS-MX &> /dev/null
-chmod +x /usr/bin/VPS-MX
-
 if [ "$REBOOT" = "1" ]; then
 	printTitle "        SU VPS SE REINICIARA EN 20 SEGUNDOS           "
 	
