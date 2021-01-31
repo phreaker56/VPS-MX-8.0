@@ -192,7 +192,7 @@ lsb_release -d
 
 printTitle "Tiempo que tomó Actulizacion"
 echo "$((($(date +%s)-$TIME_START)/60)) min."
-
+clear
 msg -bar2
 echo -e "\033[93m           -- ACTULIZACION CASI COMPLETA -- "
 echo -e "\033[97m  SU VPS SE REINICIARA PARA FINALIZAR ACTULIZACIONES"
@@ -202,6 +202,9 @@ echo -e "\033[93m                 DIGITE LA PALABRA\033[97m"
 echo ""
 echo -e "                  \033[1;41m sudo VPS-MX \033[0m"
 msg -bar2
+
+REBOOT=1
+REBOOT_TIMEOUT=20
 
 if [ "$REBOOT" = "1" ]; then
 	printTitle "        SU VPS SE REINICIARA EN 20 SEGUNDOS           "
