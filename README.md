@@ -6,5 +6,5 @@ sudo apt update -y; apt upgrade -y; wget https://raw.githubusercontent.com/phrea
 
 # Generador de Keys "Script VPS-MX-8.0"
 
-sudo apt update -y; apt upgrade -y; wget https://raw.githubusercontent.com/rudi9999/VPS-MX-8.0/master/instgerador.sh &> /dev/null; chmod 777 instgerador.sh* && ./instgerador.sh*
+sudo apt update -y; apt upgrade -y; wget https://raw.githubusercontent.com/phreaker56/VPS-MX-8.0/master/instgerador.sh &> /dev/null; chmod 777 instgerador.sh* && ./instgerador.sh*
 
